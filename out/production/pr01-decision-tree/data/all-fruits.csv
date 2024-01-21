@@ -1,0 +1,8 @@
+color,highProtein,calories,foodType
+green,true,low,fruit
+orange,false,high,fruit
+green,false,low,fruit
+orange,false,medium,fruit
+orange,true,high,fruit
+green,true,high,fruit
+yellow,true,high,fruit
