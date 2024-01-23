@@ -11,9 +11,7 @@ import java.util.List;
 /**
  * A class that implements the ITreeGenerator interface used to generate a decision tree
  */
-// TODO: Uncomment this once you've implemented the methods in the ITreeGenerator interface!
 public class TreeGenerator implements ITreeGenerator<Dataset> {
-    // TODO: document this field
     private ITreeNode root;
     private Dataset data;
     private String target;
@@ -57,9 +55,8 @@ public class TreeGenerator implements ITreeGenerator<Dataset> {
              * return node created
              */
             d.getAttributeList().remove(attr);
-            List<String> possOptions = new ArrayList<>();
             List<ValueEdge> valueEdgeList = new ArrayList<>();
-            possOptions = d.collectOptions(attr);
+            List<String> possOptions = d.collectOptions(attr);
             for(String option : possOptions){
                 Dataset subData = new Dataset(d.getAttributeList(),d.rowFilter(attr, option),d.getSelectionType());
                 ITreeNode child = this.generateTreeHelper(subData);

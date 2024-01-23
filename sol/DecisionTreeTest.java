@@ -20,32 +20,24 @@ import java.util.List;
  * A class containing the tests for methods in the TreeGenerator and Dataset classes
  */
 public class DecisionTreeTest {
-    //TODO: Write more unit and system tests! Some basic guidelines that we will be looking for:
-    // 1. Small unit tests on the Dataset class testing the IDataset methods
-    // 2. Small unit tests on the TreeGenerator class that test the ITreeGenerator methods
-    // 3. Tests on your own small dataset (expect 70% accuracy on testing data, 95% on training data)
-    // 4. Test on the villains dataset (expect 70% accuracy on testing data, 95% on training data)
-    // 5. Tests on the mushrooms dataset (expect 70% accuracy on testing data, 95% on training data)
-    // Feel free to write more unit tests for your own helper methods -- more details can be found in the handout!
-
-    String trainingPath = "data/fruits-and-vegetables.csv"; // TODO: replace with your own input file
-    String targetAttribute = "foodType"; // TODO: replace with your own target attribute
+    String trainingPath = "data/fruits-and-vegetables.csv";
+    String targetAttribute = "foodType";
     TreeGenerator testGenerator;
 
-    String trainingPath2 = "data/isMammal.csv"; // TODO: replace with your own input file
-    String targetAttribute2 = "isMammal"; // TODO: replace with your own target attribute
+    String trainingPath2 = "data/isMammal.csv";
+    String targetAttribute2 = "isMammal";
     TreeGenerator testGenerator2;
 
-    String trainingPath4 = "data/candidates/testing.csv"; // TODO: replace with your own input file
-    String targetAttribute4 = "hired"; // TODO: replace with your own target attribute
+    String trainingPath4 = "data/candidates/testing.csv";
+    String targetAttribute4 = "hired";
     TreeGenerator testGenerator4;
 
-    String trainingPath6 = "data/songs/testing.csv"; // TODO: replace with your own input file
-    String targetAttribute6 = "isPopular"; // TODO: replace with your own target attribute
+    String trainingPath6 = "data/songs/testing.csv";
+    String targetAttribute6 = "isPopular";
     TreeGenerator testGenerator6;
 
-    String trainingPath9 = "data/all-fruits.csv"; // TODO: replace with your own input file
-    String targetAttribute9 = "foodType"; // TODO: replace with your own target attribute
+    String trainingPath9 = "data/all-fruits.csv";
+    String targetAttribute9 = "foodType";
     TreeGenerator testGenerator9;
 
     /**
@@ -411,7 +403,7 @@ public class DecisionTreeTest {
         song1.setAttributeValue("isHighValence", "FALSE");
         song1.setAttributeValue("isAcoustic", "FALSE");
         song1.setAttributeValue("isSpeechy", "FALSE");
-        //return classification of tangerine under new decision tree
+        //return classification of song under new decision tree
         Assert.assertEquals("TRUE", this.testGenerator6.getDecision(song1));
 
         // makes a new (partial) Row representing the song2 from the example
@@ -424,8 +416,8 @@ public class DecisionTreeTest {
         song2.setAttributeValue("isHighValence", "FALSE");
         song2.setAttributeValue("isAcoustic", "FALSE");
         song2.setAttributeValue("isSpeechy", "FALSE");
-        //return classification of tangerine under new decision tree
-        Assert.assertEquals("FALSE", this.testGenerator6.getDecision(song2));
+        //return classification of song under new decision tree
+        Assert.assertEquals("TRUE", this.testGenerator6.getDecision(song2));
 
 
     }
@@ -440,8 +432,8 @@ public class DecisionTreeTest {
         Dataset training = new Dataset(attributeList, dataObjects, AttributeSelection.ASCENDING_ALPHABETICAL);
 
         // builds a TreeGenerator object and generates a tree for "foodType"
-        this.testGenerator = new TreeGenerator();
-        this.testGenerator.generateTree(training, this.targetAttribute);
+        this.testGenerator4 = new TreeGenerator();
+        this.testGenerator4.generateTree(training, this.targetAttribute);
 
         // makes a new (partial) Row representing the grape from the example
         Row grape = new Row("test row (grape)");

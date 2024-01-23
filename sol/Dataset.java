@@ -13,7 +13,6 @@ import src.Row;
 /**
  * A class representing a training dataset for the decision tree
  */
-// TODO: Uncomment this once you've implemented the methods in the IDataset interface!
 public class Dataset implements IDataset {
 
     private AttributeSelection selectionType;

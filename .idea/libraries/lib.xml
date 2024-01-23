@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/production/pr01-decision-tree/lib/commons-csv-1.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/pr01-decision-tree/lib/junit-4.13.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/pr01-decision-tree/lib/hamcrest-core-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/out/production/pr01-decision-tree/lib/gs-ui-javafx-2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
