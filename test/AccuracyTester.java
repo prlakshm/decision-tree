@@ -19,7 +19,7 @@ import java.util.Set;
  * @param <G>
  * @param <D>
  */
-public class DecisionTreeTester<G extends ITreeGenerator<D>, D extends IDataset> {
+public class AccuracyTester<G extends ITreeGenerator<D>, D extends IDataset> {
     private static final String DATA_BASE = "data/";
     private static final String LIKE_TO_EAT = "likeToEat";
 
@@ -60,7 +60,7 @@ public class DecisionTreeTester<G extends ITreeGenerator<D>, D extends IDataset>
      * @param datasetClass   the DataTable class
      * @param generatorClass the TreeGenerator class
      */
-    public DecisionTreeTester(Class<G> generatorClass, Class<D> datasetClass)
+    public AccuracyTester(Class<G> generatorClass, Class<D> datasetClass)
             throws NoSuchMethodException, IllegalAccessException,
             InvocationTargetException, InstantiationException {
         this.generatorClass = generatorClass;
@@ -192,9 +192,9 @@ public class DecisionTreeTester<G extends ITreeGenerator<D>, D extends IDataset>
      * @param args
      */
     public static void main(String[] args) {
-        DecisionTreeTester<TreeGenerator, Dataset> tester;
+        AccuracyTester<TreeGenerator, Dataset> tester;
         try {
-            tester = new DecisionTreeTester<>(TreeGenerator.class, Dataset.class);
+            tester = new AccuracyTester<>(TreeGenerator.class, Dataset.class);
             Dataset trainingData = makeDataset(SONG_TRAINING, Dataset.class);
             double accuracy =
                     tester.getDecisionTreeAccuracy(trainingData, trainingData, IS_POPULAR);
