@@ -7,6 +7,8 @@ import src.Row;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 
 /**
  * A class that implements the ITreeGenerator interface used to generate a decision tree
@@ -55,14 +57,10 @@ public class TreeGenerator implements ITreeGenerator<Dataset> {
              * return node created
              */
             d.getAttributeList().remove(attr);
-            List<ValueEdge> valueEdgeList = new ArrayList<>();
             List<String> possOptions = d.collectOptions(attr);
-            for(String option : possOptions){
-                Dataset subData = new Dataset(d.getAttributeList(),d.rowFilter(attr, option),d.getSelectionType());
-                ITreeNode child = this.generateTreeHelper(subData);
-                ValueEdge val = new ValueEdge(option, child);
-                valueEdgeList.add(val);
-            }
+            List<ValueEdge> valueEdgeList = possOptions.stream()
+                    .map(option -> new ValueEdge(option, generateTreeHelper(new Dataset(d.getAttributeList(), d.rowFilter(attr, option), d.getSelectionType()))))
+                    .collect(Collectors.toList());
             return new AttributeNode(valueEdgeList, d.popularOption(d.getDataObjects(), this.target), attr);
         }
     }

@@ -1,7 +1,9 @@
-package sol;
+package test;
 
 import org.junit.Assert;
 import org.junit.Test;
+import sol.Dataset;
+import sol.TreeGenerator;
 import src.AttributeSelection;
 import src.DecisionTreeCSVParser;
 import src.Row;

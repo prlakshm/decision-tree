@@ -1,15 +1,14 @@
-package src;
+package test;
 
 import sol.Dataset;
 import sol.TreeGenerator;
+import src.*;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 /**
