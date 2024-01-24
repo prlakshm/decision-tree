@@ -53,3 +53,7 @@ AccuracyTester: This Class provides methods for testing the accuracy of our Deci
 We have marked some lines that users can edit to change which dataset this runs on.
 
 ## Errors and Bugs
+
+When we tested our tree generator algorithm on different datasets for accuracy using AccuracyTester.java. All datasets
+received an accuracy score of over 70% on testing data and over 90% on training data except the popular song dataset. 
+The popular song dataset received an accuracy of 89.59%  for training data and 73.

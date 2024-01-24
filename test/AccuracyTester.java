@@ -14,7 +14,7 @@ import java.util.Set;
 /**
  * A class containing methods to help test decision tree prediction functionality
  *
- * EXPECT: 70% on testing data and 90% on training data
+ * EXPECT: at least 70% on testing data and at least 90% on training data
  *
  * @param <G>
  * @param <D>
@@ -188,7 +188,10 @@ public class AccuracyTester<G extends ITreeGenerator<D>, D extends IDataset> {
     }
 
     /**
-     * Calculates the average accuracy of the decision tree on the mushrooms dataset
+     * Calculates the average accuracy of the decision tree on dataset
+     *
+     * Change the TRAINING_DATASET, TESTING_DATASET, and TARGET_ATTRIBUTE to desired set
+     *
      * @param args
      */
     public static void main(String[] args) {
